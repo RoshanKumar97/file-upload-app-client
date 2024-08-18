@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  label, input {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    border-radius: 5px;          
+  }
+
+  label:hover, input:hover {
+    background-color: RoyalBlue;
+  }
+  label {
+    background: DodgerBlue;
+    color:white;
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 50px;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 400;   
+    box-shadow: 0 1px 1px gray;
+  }
+
+  input[type=file] {
+    opacity: 0;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  fa-icon {
+    font-size: 30px;
+  }

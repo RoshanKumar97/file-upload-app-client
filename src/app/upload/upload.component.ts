@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from '../upload.service';
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-upload',
@@ -7,6 +8,7 @@ import { UploadService } from '../upload.service';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
+  faCloudUploadAlt = faCloudUploadAlt;
 
   selectedFile: File | null = null;
 
@@ -19,7 +21,8 @@ export class UploadComponent implements OnInit {
     this.selectedFile = event.target.files[0];
   }
 
-  onUpload() {
+  onUpload(event: any) {
+    this.selectedFile = event.target.files[0];
     if (this.selectedFile) {
       this.uploadService.upload(this.selectedFile).subscribe(
         (response) => console.log('Uploaded successfully', response),
