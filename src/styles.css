@@ -2,7 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.btn {
+button {
     background-color: DodgerBlue;
     border: none;
     color: white;
@@ -10,7 +10,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     cursor: pointer;
     font-size: 20px;
     border-radius: 5px; 
+    margin: 2px;
   }
-  .btn:hover {
+  button:hover {
     background-color: RoyalBlue;
   }
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}

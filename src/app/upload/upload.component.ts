@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from '../upload.service';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -12,23 +13,23 @@ export class UploadComponent implements OnInit {
 
   selectedFile: File | null = null;
 
-  constructor(private uploadService: UploadService) { }
+  constructor(private uploadService: UploadService, private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  onSelected(event: any) {
-    this.selectedFile = event.target.files[0];
   }
 
   onUpload(event: any) {
     this.selectedFile = event.target.files[0];
     if (this.selectedFile) {
       this.uploadService.upload(this.selectedFile).subscribe(
-        (response) => console.log('Uploaded successfully', response),
+        (response) => this.router.navigate(['/user']),
         (error) => console.log('Upload failed', error)
       );
     }
+  }
+
+  goToUser() {
+    this.router.navigate(['/user'])
   }
 
 }

@@ -1,0 +1,42 @@
+<button (click)="goBack()" style="margin: 10px;">Back</button>
+
+<div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Mobile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.mobile }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div>
+      <button class="btn" (click)="previousPage()">Previous</button>
+      <span style="font-size: 20px;">{{ currentPage }} / {{ totalPages }}</span>
+      <button class="btn" (click)="nextPage()">Next</button>
+      <input style="font-size: 20px;" type="number" [(ngModel)]="currentPage" (change)="goToPage(currentPage)" min="1" max="{{totalPages}}">
+
+    </div> -->
+
+    <div>
+        <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    
+        <button *ngFor="let page of pageNumbers" 
+                (click)="goToPage(page)" 
+                [disabled]="page === currentPage">
+          {{ page }}
+        </button>
+    
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
+      </div>
+  </div>
+  
