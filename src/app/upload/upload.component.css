@@ -1,8 +1,9 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
   }
   label, input {
     cursor: pointer;
@@ -37,4 +38,11 @@
 
   fa-icon {
     font-size: 30px;
+  }
+
+  .btnContainer {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
